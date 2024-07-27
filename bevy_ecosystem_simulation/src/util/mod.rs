@@ -1,3 +1,4 @@
+pub use plugin::*;
+
 mod plugin;
 
-pub use plugin::EsUtilPlugin;
