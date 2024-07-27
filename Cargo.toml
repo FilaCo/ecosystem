@@ -1,4 +1,4 @@
-[package]
-name = "bevy_ecosystem_simulation"
-version = "0.1.0"
-edition = "2021"
+[workspace]
+members = ["bevy_ecosystem_simulation", "examples/*"]
+default-members = ["bevy_ecosystem_simulation"]
+resolver = "2"
