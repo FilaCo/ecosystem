@@ -1,5 +1,6 @@
-use bevy::prelude::App;
 use bevy::DefaultPlugins;
+use bevy::prelude::{App, Component};
+
 use bevy_ecosystem_simulation::prelude::EsPlugin;
 
 fn main() {
@@ -8,3 +9,6 @@ fn main() {
         .add_plugins(EsPlugin)
         .run();
 }
+
+#[derive(Component, Debug)]
+struct Rabbit;

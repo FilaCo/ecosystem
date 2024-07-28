@@ -1,8 +1,0 @@
-[package]
-name = "predator_prey"
-version = "0.1.0"
-edition = "2021"
-
-[dependencies]
-bevy = { version = "0.14", features = ["default"] }
-bevy_ecosystem_simulation = { path = "../../bevy_ecosystem_simulation" }

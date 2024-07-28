@@ -1,4 +1,27 @@
-[workspace]
-members = ["bevy_ecosystem_simulation", "examples/*"]
-default-members = ["bevy_ecosystem_simulation"]
-resolver = "2"
+[package]
+name = "bevy_ecosystem_simulation"
+version = "0.14.0"
+edition = "2021"
+
+[dependencies]
+bevy = { version = "0.14", default-features = false }
+
+[dev-dependencies]
+bevy = { version = "0.14", default-features = false, features = [
+    "animation",
+    "bevy_asset",
+    "bevy_audio",
+    "bevy_core_pipeline",
+    "bevy_gltf",
+    "bevy_pbr",
+    "bevy_render",
+    "bevy_scene",
+    "bevy_text",
+    "bevy_ui",
+    "bevy_winit",
+    "multi_threaded",
+    "serialize",
+    "tonemapping_luts",
+    #"wayland",
+    "x11"
+] }
