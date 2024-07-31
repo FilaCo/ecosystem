@@ -1,6 +1,6 @@
 [package]
-name = "bevy_ecosystem_simulation"
-version = "0.14.0"
+name = "ecosystem"
+version = "0.1.0"
 edition = "2021"
 
 [profile.dev.package."*"]
@@ -10,9 +10,6 @@ opt-level = 3
 type_complexity = "allow"
 
 [dependencies]
-bevy = { version = "0.14", default-features = false }
-
-[dev-dependencies]
 bevy = { version = "0.14", default-features = false, features = [
     "animation",
     "bevy_asset",
@@ -26,8 +23,9 @@ bevy = { version = "0.14", default-features = false, features = [
     "bevy_ui",
     "bevy_winit",
     "multi_threaded",
-    "serialize",
+    #"serialize",
     "tonemapping_luts",
-    #"wayland",
+    "wayland",
     "x11"
 ] }
+

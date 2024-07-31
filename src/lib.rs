@@ -1,8 +1,7 @@
-pub(crate) mod feature;
+mod feature;
 pub mod plugin;
-pub(crate) mod util;
+mod util;
 
 pub mod prelude {
-    pub use super::feature::{component::*, event::*, resource::*};
     pub use super::plugin::*;
 }
