@@ -19,11 +19,12 @@ bevy = { version = "0.14", default-features = false, features = [
     "bevy_pbr",
     "bevy_render",
     "bevy_scene",
+    "bevy_state",
     "bevy_text",
     "bevy_ui",
     "bevy_winit",
     "multi_threaded",
-    #"serialize",
+    "serialize",
     "tonemapping_luts",
     "wayland",
     "x11"

@@ -2,7 +2,7 @@ use bevy::DefaultPlugins;
 use bevy::diagnostic::*;
 use bevy::prelude::*;
 
-use crate::feature::EsFeaturePlugin;
+use crate::window::plugin::EsWindowPlugin;
 
 pub struct EsPlugin;
 
@@ -14,14 +14,7 @@ impl EsPlugin {
 
 impl Plugin for EsPlugin {
     fn build(&self, app: &mut App) {
-        app.add_plugins(DefaultPlugins.set(WindowPlugin {
-            primary_window: Some(Window {
-                visible: false,
-                ..default()
-            }),
-            ..default()
-        }))
-        .add_plugins(EsFeaturePlugin);
+        app.add_plugins(DefaultPlugins).add_plugins(EsWindowPlugin);
 
         if cfg!(debug_assertions) {
             app.add_plugins((
