@@ -29,10 +29,12 @@ bevy = { version = "0.14", default-features = false, features = [
     "wayland",
     "x11"
 ] }
+bevy_atmosphere = { version = "0.10" }
 bevy_editor_pls = { version = "0.9" }
 bevy_pkv = { version = "0.11" }
 leafwing-input-manager = { version = "0.14" }
 rand = { version = "0.8" }
+noise = { version = "0.9" }
 
 [patch.crates-io]
 bevy_editor_pls = { git = "https://github.com/zhaop/bevy_editor_pls.git", branch = "bevy-0.14" }

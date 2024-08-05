@@ -1,5 +1,6 @@
 use bevy::prelude::*;
 use bevy::window::{CursorGrabMode, PrimaryWindow};
+use bevy_atmosphere::prelude::*;
 use leafwing_input_manager::InputManagerBundle;
 use leafwing_input_manager::prelude::ActionState;
 
@@ -15,7 +16,8 @@ pub fn setup_camera(mut commands: Commands) {
         })
         .insert(InputManagerBundle::with_map(
             EsCameraAction::default_input_map(),
-        ));
+        ))
+        .insert(AtmosphereCamera::default());
 }
 
 pub fn grab_cursor(

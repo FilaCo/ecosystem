@@ -1,6 +1,7 @@
 use bevy::DefaultPlugins;
 use bevy::diagnostic::*;
 use bevy::prelude::*;
+use bevy_atmosphere::prelude::*;
 use bevy_editor_pls::EditorPlugin;
 
 use crate::app::plugin::EsAppPlugin;
@@ -20,6 +21,7 @@ impl EsPlugin {
 impl Plugin for EsPlugin {
     fn build(&self, app: &mut App) {
         app.add_plugins(DefaultPlugins)
+            .add_plugins(AtmospherePlugin)
             .add_plugins(EsAppPlugin)
             .add_plugins(EsCameraPlugin)
             .add_plugins(EsEnvironmentPlugin)

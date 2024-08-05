@@ -1,5 +1,3 @@
-use std::f32::consts::PI;
-
 use bevy::prelude::*;
 
 use crate::environment::component::Terrain;
@@ -18,14 +16,14 @@ pub fn setup_terrain(
 
 pub fn setup_lighting(mut commands: Commands) {
     commands.spawn(DirectionalLightBundle {
+        transform: Transform::from_rotation(Quat::from_euler(
+            EulerRot::ZYX,
+            0.0,
+            1.0,
+            -std::f32::consts::FRAC_PI_4,
+        )),
         directional_light: DirectionalLight {
-            illuminance: light_consts::lux::OVERCAST_DAY,
             shadows_enabled: true,
-            ..default()
-        },
-        transform: Transform {
-            translation: Vec3::new(0.0, 2.0, 0.0),
-            rotation: Quat::from_rotation_x(-PI / 4.),
             ..default()
         },
         ..default()
