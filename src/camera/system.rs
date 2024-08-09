@@ -22,14 +22,12 @@ pub fn setup_camera(mut commands: Commands) {
 
 pub fn grab_cursor(
     mut q_window: Query<&mut Window, With<PrimaryWindow>>,
-    q_camera: Query<&ActionState<EsCameraAction>, With<EsCamera>>,
+    input: Res<ButtonInput<KeyCode>>,
 ) {
     q_window.iter_mut().for_each(|mut window| {
-        q_camera.iter().for_each(|camera_action| {
-            if camera_action.just_pressed(&EsCameraAction::GrabCursor) {
-                toggle_grab_cursor(&mut window);
-            }
-        });
+        if input.just_pressed(KeyCode::Escape) {
+            toggle_grab_cursor(&mut window);
+        }
     });
 }
 

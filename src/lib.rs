@@ -3,6 +3,7 @@ mod camera;
 mod environment;
 mod menu;
 pub mod plugin;
+mod simulation;
 mod util;
 mod window;
 

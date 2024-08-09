@@ -23,8 +23,8 @@ impl Plugin for EsPlugin {
         app.add_plugins(DefaultPlugins)
             .add_plugins(AtmospherePlugin)
             .add_plugins(EsAppPlugin)
-            .add_plugins(EsCameraPlugin)
-            .add_plugins(EsEnvironmentPlugin)
+            // .add_plugins(EsCameraPlugin)
+            // .add_plugins(EsEnvironmentPlugin)
             .add_plugins(EsMenuPlugin)
             .add_plugins(EsWindowPlugin);
 
@@ -33,7 +33,7 @@ impl Plugin for EsPlugin {
                 FrameTimeDiagnosticsPlugin,
                 LogDiagnosticsPlugin::default(),
                 EntityCountDiagnosticsPlugin,
-                EditorPlugin::default(),
+                // EditorPlugin::default(),
             ));
         }
     }

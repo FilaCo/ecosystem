@@ -10,25 +10,28 @@ opt-level = 3
 type_complexity = "allow"
 
 [dependencies]
-bevy = { version = "0.14", default-features = false, features = [
-    "animation",
-    "bevy_asset",
-    "bevy_audio",
-    "bevy_core_pipeline",
-    "bevy_gltf",
-    "bevy_pbr",
-    "bevy_render",
-    "bevy_scene",
-    "bevy_state",
-    "bevy_text",
-    "bevy_ui",
-    "bevy_winit",
-    "multi_threaded",
-    "serialize",
-    "tonemapping_luts",
-    "wayland",
-    "x11"
-] }
+#bevy = { version = "0.14", default-features = false, features = [
+#    "animation",
+#    "bevy_asset",
+#    "bevy_audio",
+#    "bevy_core_pipeline",
+#    "bevy_dev_tools",
+#    "bevy_gltf",
+#    "bevy_pbr",
+#    "bevy_render",
+#    "bevy_scene",
+#    "bevy_state",
+#    "bevy_text",
+#    "bevy_ui",
+#    "bevy_winit",
+#    "multi_threaded",
+#    "serialize",
+#    "tonemapping_luts",
+#    "wayland",
+#    "x11"
+#] }
+bevy = { version = "0.14", features = ["bevy_dev_tools", "wayland"] }
+bevy_asset_loader = { version = "0.21", features = ["standard_dynamic_assets"] }
 bevy_atmosphere = { version = "0.10" }
 bevy_editor_pls = { version = "0.9" }
 bevy_pkv = { version = "0.11" }

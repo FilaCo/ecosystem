@@ -5,7 +5,6 @@ pub enum EsAppState {
     #[default]
     AppLoading,
     MenuRunning,
-    SimulationLoading,
     SimulationRunning,
     AppClosing,
 }

@@ -1,5 +1,7 @@
 .idea/
 node_modules/
 /target
+*.blend*
+!*.blend
 *.drawio.bkp
 *.drawio.dtmp
