@@ -2,11 +2,8 @@ use bevy::color::palettes::css::WHITE;
 use bevy::dev_tools::ui_debug_overlay::UiDebugOptions;
 use bevy::prelude::*;
 
-use crate::app::resource::EsAssets;
-use crate::app::state::EsAppState;
-use crate::menu::component::{EsMenuCamera, OnMainMenuScreen};
-use crate::menu::layout::{ASH_GREY, DARK_SPRING_GREEN};
-use crate::menu::state::EsMenuState;
+use crate::menu::layout::*;
+use crate::prelude::*;
 
 pub fn toggle_overlay(input: Res<ButtonInput<KeyCode>>, mut options: ResMut<UiDebugOptions>) {
     if input.just_pressed(KeyCode::Space) {

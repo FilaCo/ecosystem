@@ -1,11 +1,9 @@
 use bevy::dev_tools::ui_debug_overlay::DebugUiPlugin;
 use bevy::prelude::*;
 
-use crate::app::state::EsAppState;
-use crate::menu::component::{EsMenuCamera, OnMainMenuScreen};
-use crate::menu::state::EsMenuState;
-use crate::menu::system::*;
-use crate::util::despawn_by_component;
+use crate::prelude::*;
+
+use super::system::*;
 
 pub struct EsMenuPlugin;
 

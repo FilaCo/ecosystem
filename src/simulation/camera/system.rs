@@ -4,7 +4,7 @@ use bevy_atmosphere::prelude::*;
 use leafwing_input_manager::InputManagerBundle;
 use leafwing_input_manager::prelude::ActionState;
 
-use crate::camera::component::{EsCamera, EsCameraAction};
+use crate::simulation::camera::component::*;
 use crate::util::{forward_walk_vector, strafe_vector, toggle_grab_cursor};
 
 pub fn setup_camera(mut commands: Commands) {

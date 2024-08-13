@@ -1,9 +1,7 @@
 use bevy::prelude::*;
 use bevy_asset_loader::prelude::*;
 
-use crate::app::consts::ES_ASSETS_FILE_PATH;
-use crate::app::resource::EsAssets;
-use crate::app::state::EsAppState;
+use crate::prelude::*;
 
 pub struct EsAppPlugin;
 

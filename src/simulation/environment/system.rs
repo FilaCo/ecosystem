@@ -1,6 +1,6 @@
 use bevy::prelude::*;
 
-use crate::environment::component::Terrain;
+use crate::prelude::*;
 
 pub fn setup_terrain(
     mut commands: Commands,

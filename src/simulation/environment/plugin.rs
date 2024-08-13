@@ -1,6 +1,6 @@
 use bevy::prelude::*;
 
-use crate::environment::system::{setup_lighting, setup_terrain};
+use super::system::*;
 
 pub struct EsEnvironmentPlugin;
 

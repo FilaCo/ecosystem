@@ -1,9 +1,9 @@
 pub use component::*;
 pub use plugin::*;
-pub use state::*;
+pub use resource::*;
 
 mod component;
-mod layout;
 mod plugin;
-mod state;
+mod resource;
 mod system;
+mod util;

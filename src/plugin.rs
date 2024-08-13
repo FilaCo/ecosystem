@@ -4,11 +4,7 @@ use bevy::prelude::*;
 use bevy_atmosphere::prelude::*;
 use bevy_editor_pls::EditorPlugin;
 
-use crate::app::plugin::EsAppPlugin;
-use crate::camera::plugin::EsCameraPlugin;
-use crate::environment::plugin::EsEnvironmentPlugin;
-use crate::menu::plugin::EsMenuPlugin;
-use crate::window::plugin::EsWindowPlugin;
+use crate::prelude::*;
 
 pub struct EsPlugin;
 
@@ -23,8 +19,6 @@ impl Plugin for EsPlugin {
         app.add_plugins(DefaultPlugins)
             .add_plugins(AtmospherePlugin)
             .add_plugins(EsAppPlugin)
-            // .add_plugins(EsCameraPlugin)
-            // .add_plugins(EsEnvironmentPlugin)
             .add_plugins(EsMenuPlugin)
             .add_plugins(EsWindowPlugin);
 

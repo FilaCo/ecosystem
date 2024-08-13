@@ -1,8 +1,9 @@
 use bevy::prelude::*;
 use leafwing_input_manager::prelude::*;
 
-use crate::camera::component::EsCameraAction;
-use crate::camera::system::{grab_cursor, handle_camera_action, setup_camera};
+use crate::prelude::*;
+
+use super::system::*;
 
 pub struct EsCameraPlugin;
 
