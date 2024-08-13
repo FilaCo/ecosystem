@@ -1,0 +1,11 @@
+({
+    "font": File(
+        path: "fonts/KatahdinRound-Bold.ttf",
+    ),
+    "materials": Folder(
+        path: "materials",
+    ),
+    "models": Folder(
+        path: "models",
+    ),
+})

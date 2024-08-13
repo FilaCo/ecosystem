@@ -12,8 +12,6 @@ pub enum EsCameraAction {
     Move,
     Ascend,
     Descend,
-    // TODO: actually not a camera action
-    GrabCursor,
 }
 
 impl EsCameraAction {
@@ -25,8 +23,7 @@ impl EsCameraAction {
             .insert(Self::Pan, DualAxis::mouse_motion())
             .insert(Self::Move, VirtualDPad::wasd())
             .insert(Self::Ascend, KeyCode::Space)
-            .insert(Self::Descend, KeyCode::ShiftLeft)
-            .insert(Self::GrabCursor, KeyCode::Escape);
+            .insert(Self::Descend, KeyCode::ShiftLeft);
 
         input_map
     }
