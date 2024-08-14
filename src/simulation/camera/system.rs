@@ -1,11 +1,12 @@
 use bevy::prelude::*;
 use bevy::window::{CursorGrabMode, PrimaryWindow};
 use bevy_atmosphere::prelude::*;
+use leafwing_input_manager::axislike::DualAxisData;
 use leafwing_input_manager::InputManagerBundle;
 use leafwing_input_manager::prelude::ActionState;
 
-use crate::simulation::camera::component::*;
-use crate::util::{forward_walk_vector, strafe_vector, toggle_grab_cursor};
+use crate::prelude::*;
+use crate::util::*;
 
 pub fn setup_camera(mut commands: Commands) {
     commands
@@ -17,7 +18,8 @@ pub fn setup_camera(mut commands: Commands) {
         .insert(InputManagerBundle::with_map(
             EsCameraAction::default_input_map(),
         ))
-        .insert(AtmosphereCamera::default());
+        .insert(AtmosphereCamera::default())
+        .insert(OnSimulationScreen);
 }
 
 pub fn grab_cursor(
@@ -29,6 +31,11 @@ pub fn grab_cursor(
             toggle_grab_cursor(&mut window);
         }
     });
+}
+
+pub fn initial_grab_cursor(mut q: Query<&mut Window, With<PrimaryWindow>>) {
+    q.iter_mut()
+        .for_each(|mut window| toggle_grab_cursor(&mut window));
 }
 
 pub fn handle_camera_action(
@@ -46,7 +53,7 @@ pub fn handle_camera_action(
                 // handle pan
                 let camera_pan_vector = camera_action
                     .axis_pair(&EsCameraAction::Pan)
-                    .expect("Unable to get camera_pan_vector");
+                    .unwrap_or(DualAxisData::default());
 
                 if camera_pan_vector.length_squared() > 0. {
                     let (mut yaw, mut pitch, _) = camera_transform.rotation.to_euler(EulerRot::YXZ);
@@ -67,7 +74,7 @@ pub fn handle_camera_action(
 
                 let camera_move_vector = camera_action
                     .axis_pair(&EsCameraAction::Move)
-                    .expect("Unable to get camera_move_vector");
+                    .unwrap_or(DualAxisData::default());
 
                 if camera_move_vector.length_squared() > 0. {
                     velocity += (strafe_vector(&camera_transform.rotation) * camera_move_vector.x())

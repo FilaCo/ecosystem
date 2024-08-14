@@ -18,9 +18,12 @@ impl Plugin for EsPlugin {
     fn build(&self, app: &mut App) {
         app.add_plugins(DefaultPlugins)
             .add_plugins(AtmospherePlugin)
-            .add_plugins(EsAppPlugin)
-            .add_plugins(EsMenuPlugin)
-            .add_plugins(EsWindowPlugin);
+            .add_plugins((
+                EsAppPlugin,
+                EsMenuPlugin,
+                EsSimulationPlugin,
+                EsWindowPlugin,
+            ));
 
         if cfg!(debug_assertions) {
             app.add_plugins((
