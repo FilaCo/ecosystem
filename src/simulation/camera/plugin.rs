@@ -14,6 +14,6 @@ impl Plugin for EsCameraPlugin {
                 OnEnter(EsSimulationState::Running),
                 (setup_camera, initial_grab_cursor),
             )
-            .add_systems(Update, handle_camera_action);
+            .add_systems(Update, (handle_camera_action, grab_cursor));
     }
 }

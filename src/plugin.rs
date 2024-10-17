@@ -30,7 +30,7 @@ impl Plugin for EsPlugin {
                 FrameTimeDiagnosticsPlugin,
                 LogDiagnosticsPlugin::default(),
                 EntityCountDiagnosticsPlugin,
-                // EditorPlugin::default(),
+                EditorPlugin::default(),
             ));
         }
     }

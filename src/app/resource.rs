@@ -1,12 +1,20 @@
 use bevy::prelude::*;
+use bevy::utils::hashbrown::HashMap;
 use bevy_asset_loader::prelude::*;
 
-#[derive(AssetCollection, Resource)]
+#[derive(AssetCollection, Debug, Resource)]
 pub struct EsAssets {
     #[asset(key = "font")]
     pub font: Handle<Font>,
-    // #[asset(key = "materials", collection(typed, mapped))]
-    // pub materials: HashMap<String, Handle<StandardMaterial>>,
-    // #[asset(key = "models", collection(typed, mapped))]
-    // pub models: HashMap<String, Handle<Gltf>>,
+
+    ///
+    /// Scene0 - Fox
+    ///
+    /// Scene1 - Rabbit
+    ///
+    #[asset(
+        paths("world.glb#Scene0", "world.glb#Scene1"),
+        collection(mapped, typed)
+    )]
+    pub models: HashMap<AssetLabel, Handle<Scene>>,
 }
